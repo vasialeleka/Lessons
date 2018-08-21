@@ -1,3 +1,5 @@
+package com.vasialeleka;
+
 public class Main {
 
 
