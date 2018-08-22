@@ -12,6 +12,7 @@ public class Notebook {
         String[] notes = new String[100];
         int j = 0;
         while (true) {
+
             System.out.println("Push 1 for new note.\n 2 - see all notes.\n 3 - delete .\n4 - change note.");
             Scanner in = new Scanner(System.in);
             int n = in.nextInt();
