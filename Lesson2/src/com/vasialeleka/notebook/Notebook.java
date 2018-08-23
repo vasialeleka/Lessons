@@ -8,7 +8,6 @@ public class Notebook {
 
     public static void main(String[] args) {
 
-
         String[] notes = new String[100];
         int countOfNotes = 0;
         while (true) {
