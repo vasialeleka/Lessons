@@ -17,12 +17,12 @@ public class Notebook {
             int n = in.nextInt();
 
             if (n == 1) {
-                countOfNotes = WriteOfNotes(notes, countOfNotes);
+                countOfNotes = writeOfNotes(notes, countOfNotes);
             } else if (n == 2) {
-                ShowNotes(notes, countOfNotes);
+                showNotes(notes, countOfNotes);
             } else if (n == 3) {
-                ShowNotes(notes, countOfNotes);
-                countOfNotes = Delete(notes, countOfNotes);
+                showNotes(notes, countOfNotes);
+                countOfNotes = delete(notes, countOfNotes);
             } else if (n == 4) {
                 System.out.println("4");
                 for (int i = 0; i < notes.length; i++) {
@@ -77,7 +77,7 @@ public class Notebook {
         }
     }
 
-    private static int Delete(String[] notes, int countOfNotes) {
+    private static int delete(String[] notes, int countOfNotes) {
         System.out.println("Choose what note you want to delete :");
         Scanner delete = new Scanner(System.in);
         int del = delete.nextInt();
@@ -92,14 +92,14 @@ public class Notebook {
         return countOfNotes;
     }
 
-    private static void ShowNotes(String[] notes, int countOfNotes) {
+    private static void showNotes(String[] notes, int countOfNotes) {
         for (int i = 0; i < countOfNotes; i++) {
             System.out.println("Note " + (i + 1) + ":" + notes[i]);
             System.out.println();
         }
     }
 
-    private static int WriteOfNotes(String[] notes, int countOfNotes) {
+    private static int writeOfNotes(String[] notes, int countOfNotes) {
         System.out.println("Write your notes :");
         Scanner noteLine = new Scanner(System.in);
         String note;
