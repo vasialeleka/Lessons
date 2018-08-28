@@ -10,7 +10,6 @@ public class Main {
         Note[] notes = new Note[100];
 
         while (true) {
-            
             System.out.println("1 - Create note");
             System.out.println("2 - See all notes");
             System.out.println("3 - Delete note");
