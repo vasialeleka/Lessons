@@ -12,6 +12,7 @@ public class Main {
 
             System.out.println("1 - for add new note.");
             System.out.println("2 - for see all notes.");
+//            System.out.println("3 - for delete note");
             System.out.println("5 - close.");
             Scanner generalScan = new Scanner(System.in);
             int options;
@@ -24,26 +25,20 @@ public class Main {
 
             if (options == 1) {
 
-                System.out.println("Enter the note:");
+                NoteOptions.AddNewNote( notes);
 
-                Scanner scanForNote = new Scanner(System.in);
-
-                String note = scanForNote.nextLine();
-                notes[Note.countOfNotes] = new Note();
-                notes[Note.countOfNotes].setContent(note);
-
-                Note.increaseCount();
-                // System.out.println(notes[].getContent());
 
 
             } else if (options == 2) {
-                for (int i = 0; i < Note.countOfNotes; i++) {
-                    System.out.println(notes[i].getContent());
-                }
+
+                NoteOptions.ShowAllNotes(notes);
             } else if (options==5){
                 break;
             }
 
         }
     }
+
+
+
 }
