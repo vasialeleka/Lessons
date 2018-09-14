@@ -1,9 +1,10 @@
 package com.vasialeleka.note;
+
 import java.util.Scanner;
 
 public class NoteOptions {
 
-    public static void AddNewNote(Note[] notes){
+    public void AddNewNote(Note[] notes) {
         //NoteOptions.AddNewNote( notes);
         System.out.println("Enter the note:");
 
@@ -18,10 +19,14 @@ public class NoteOptions {
 
     }
 
-    public static void ShowAllNotes (Note[] notes)
-    {
+    public void ShowAllNotes(Note[] notes) {
         for (int i = 0; i < Note.countOfNotes; i++) {
             System.out.println(notes[i].getContent());
         }
+
     }
+  public void DeleteNote(Note[] notes){
+      System.out.println("Choose note for delete");
+  }
+
 }
