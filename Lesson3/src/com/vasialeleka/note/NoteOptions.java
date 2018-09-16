@@ -25,8 +25,17 @@ public class NoteOptions {
         }
 
     }
-  public void DeleteNote(Note[] notes){
-      System.out.println("Choose note for delete");
+  public void DeleteNote(Note[] notes ,int noteForDelete){
+
+
+      for (int i = 0; i < Note.countOfNotes; i++) {
+          if (noteForDelete == i) {
+              for (int j = i; j < Note.countOfNotes; j++) {
+                  notes[j - 1] = notes[j];
+              }
+              Note.decreaseCount();
+          }
+      }
   }
 
 }

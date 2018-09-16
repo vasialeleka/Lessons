@@ -14,6 +14,7 @@ public class Main {
             System.out.println("1 - for add new note.");
             System.out.println("2 - for see all notes.");
             System.out.println("3 - for delete note");
+            System.out.println("4 - for change note ");
             System.out.println("5 - close.");
             Scanner generalScan = new Scanner(System.in);
             int options;
@@ -35,29 +36,37 @@ public class Main {
             } else if (options == 3) {
 
                 noteOption.ShowAllNotes(notes);
+                System.out.println("Choose note for delete");
                 Scanner delete = new Scanner(System.in);
                 int noteForDelete;
-                try {noteForDelete = delete.nextInt();}
-                catch (Exception b ){
+                try {
+                    noteForDelete = delete.nextInt();
+                } catch (Exception b) {
                     System.out.println("You choose wrong number");
                     continue;
                 }
 
-                for (int i = 0 ;i<Note.countOfNotes;i++){
-                    if (noteForDelete == i){
-                        for (int j = i;j<Note.countOfNotes;j++){
-                            notes[j-1]=notes[j];
-                        }
-                        Note.decreaseCount();
-                    }
-                }
-
+                //del(notes, noteForDelete);
+                noteOption.DeleteNote(notes, noteForDelete);
 
                 System.out.println("Delete");
+            } else if (options == 4) {
+                System.out.println("Change");
             } else if (options == 5) {
                 break;
             }
 
+        }
+    }
+
+    private static void del(Note[] notes, int noteForDelete) {
+        for (int i = 0; i < Note.countOfNotes; i++) {
+            if (noteForDelete == i) {
+                for (int j = i; j < Note.countOfNotes; j++) {
+                    notes[j - 1] = notes[j];
+                }
+                Note.decreaseCount();
+            }
         }
     }
 
